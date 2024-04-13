@@ -13,7 +13,7 @@ If you're new to bash scripting or just want some examples to help you understan
 To start using these scripts, simply clone this repository to your local machine:
 
 ```
-git clone https://github.com/yourusername/simple-scripts.git
+git clone https://github.com/sahil-shefeek/simple-scripts.git
 ```
 
 Once you have the repository cloned, you can navigate to the directory and start exploring the scripts.
