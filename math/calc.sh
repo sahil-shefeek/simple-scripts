@@ -1,7 +1,5 @@
 #!/bin/bash
 while [ 1 ]; do
-read -p "Enter first number " NUM1
-read -p "Enter second number: " NUM2
 cat << EOF
 --------------------
         Menu
@@ -18,19 +16,30 @@ EOF
 read OP
 case $OP in
     1)
-    RES=$((NUM1 + NUM2))
+    read -p "Enter first number: " NUM1
+    read -p "Enter second number: " NUM2
+    echo "The result is:" $((NUM1 + NUM2))
     ;;
     2)
-    RES=$((NUM1 - NUM2))
+    read -p "Enter first number " NUM1
+    read -p "Enter second number: " NUM2
+    echo "The result is:" $((NUM1 - NUM2))
     ;;
     3)
-    RES=$((NUM1 * NUM2))
+    read -p "Enter first number " NUM1
+    read -p "Enter second number: " NUM2
+    echo "The result is:" $((NUM1 * NUM2))
     ;;
     4)
+    read -p "Enter first number " NUM1
+    read -p "Enter second number: " NUM2
     RES=$(echo "scale=2; $NUM1 / $NUM2" | bc)
+    echo "The result is: $RES"
     ;;
     5)
-    RES=$((NUM1 % NUM2))
+    read -p "Enter first number " NUM1
+    read -p "Enter second number: " NUM2
+    echo "The result is:" $((NUM1 % NUM2))
     ;;
     6)
     echo "Exiting..."
@@ -40,5 +49,4 @@ case $OP in
     echo "Please enter a valid operation."
     ;;
 esac
-echo "The result is: $RES"
 done
