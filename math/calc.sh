@@ -1,4 +1,7 @@
 #!/bin/bash
+while [ 1 ]; do
+read -p "Enter first number " NUM1
+read -p "Enter second number: " NUM2
 cat << EOF
 --------------------
         Menu
@@ -8,31 +11,34 @@ cat << EOF
 3. Multiply
 4. Divide
 5. Modulo
+6. Exit
 
 Select an operation...
 EOF
 read OP
-read -p "Enter first number " NUM1
-read -p "Enter second number: " NUM2
 case $OP in
     1)
-    SUM=$((NUM1 + NUM2))
+    RES=$((NUM1 + NUM2))
     ;;
     2)
-    SUM=$((NUM1 - NUM2))
+    RES=$((NUM1 - NUM2))
     ;;
     3)
-    SUM=$((NUM1 * NUM2))
+    RES=$((NUM1 * NUM2))
     ;;
     4)
-    SUM=$(echo "scale=2; $NUM1 / $NUM2" | bc)
+    RES=$(echo "scale=2; $NUM1 / $NUM2" | bc)
     ;;
     5)
-    SUM=$((NUM1 % NUM2))
+    RES=$((NUM1 % NUM2))
+    ;;
+    6)
+    echo "Exiting..."
+    exit 0
     ;;
     *)
     echo "Please enter a valid operation."
-    return 1
     ;;
 esac
-echo "The result is: $SUM"
+echo "The result is: $RES"
+done
